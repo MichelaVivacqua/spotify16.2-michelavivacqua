@@ -1,8 +1,8 @@
 const initialState = {
-  selectedSong: {},
+  selectedSong: [],
 };
 
-const mainReducer = (state = initialState, action) => {
+const selectedSongReducer = (state = initialState, action) => {
   switch (action.type) {
     case "SONG_SELECTED":
       return {
@@ -14,4 +14,4 @@ const mainReducer = (state = initialState, action) => {
   }
 };
 
-export default mainReducer;
+export default selectedSongReducer;

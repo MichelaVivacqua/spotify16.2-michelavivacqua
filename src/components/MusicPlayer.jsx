@@ -7,7 +7,7 @@ import next from "../assets/playerbuttons/next.png";
 import repeat from "../assets/playerbuttons/repeat.png";
 
 const MusicPlayer = () => {
-  const selectedSong = useSelector((state) => state.selectedSong);
+  const selectedSong = useSelector((state) => state.selectedSong.selectedSong);
 
   console.log(selectedSong);
 

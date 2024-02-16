@@ -1,6 +1,12 @@
-import { configureStore } from "@reduxjs/toolkit";
-import mainReducer from "../reducers";
+import { configureStore, combineReducers } from "@reduxjs/toolkit";
+import likedReducer from "../reducers/likedSong";
+import selectedSongReducer from "../reducers/selectedSong";
 
-const store = configureStore({ reducer: mainReducer });
+const globalReducer = combineReducers({
+  selectedSong: selectedSongReducer,
+  songs: likedReducer,
+});
+
+const store = configureStore({ reducer: globalReducer });
 
 export default store;

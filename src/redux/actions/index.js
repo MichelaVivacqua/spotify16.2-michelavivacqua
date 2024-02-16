@@ -4,3 +4,8 @@ export const selectSong = (song) => {
     payload: song,
   };
 };
+
+export const toggleLike = (songId) => ({
+  type: "TOGGLE_LIKE",
+  payload: songId,
+});
