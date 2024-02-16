@@ -1,6 +1,14 @@
 import { Container, Row, Col } from "react-bootstrap";
+import { useSelector } from "react-redux";
+import shuffle from "../assets/playerbuttons/shuffle.png";
+import prev from "../assets/playerbuttons/prev.png";
+import play from "../assets/playerbuttons/play.png";
+import next from "../assets/playerbuttons/next.png";
+import repeat from "../assets/playerbuttons/repeat.png";
 
 const MusicPlayer = () => {
+  const selectedSong = useSelector((state) => state.selectedSong);
+
   return (
     <div className="container-fluid fixed-bottom bg-container pt-1">
       <Container>
@@ -10,30 +18,30 @@ const MusicPlayer = () => {
               <Col xs={6} md={4} className="playerControls">
                 <div className="d-flex">
                   <a href="#">
-                    <img
-                      src="../assets/playerbuttons/shuffle.png"
-                      alt="shuffle"
-                    />
+                    <img src={shuffle} alt="shuffle" />
                   </a>
                   <a href="#">
-                    <img src="../assets/playerbuttons/prev.png" alt="prev" />
+                    <img src={prev} alt="prev" />
                   </a>
                   <a href="#">
-                    <img src="../assets/playerbuttons/play.png" alt="play" />
+                    <img src={play} alt="play" />
                   </a>
                   <a href="#">
-                    <img src="../assets/playerbuttons/next.png" alt="next" />
+                    <img src={next} alt="next" />
                   </a>
                   <a href="#">
-                    <img
-                      src="../assets/playerbuttons/repeat.png"
-                      alt="repeat"
-                    />
+                    <img src={repeat} alt="repeat" />
                   </a>
                 </div>
                 <div className="progress m-3">
                   <div role="progressbar"></div>
                 </div>
+                {selectedSong && (
+                  <div>
+                    <h3>{selectedSong.album.title}</h3>
+                    <p>{selectedSong.album.artist}</p>
+                  </div>
+                )}
               </Col>
             </Row>
           </Col>
