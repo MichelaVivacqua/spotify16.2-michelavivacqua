@@ -1,6 +1,7 @@
 import { selectSong } from "../redux/actions";
 import { useDispatch } from "react-redux";
 import { toggleLike } from "../redux/actions";
+import { useSelector } from "react-redux";
 
 const AlbumCard = ({ singleSong }) => {
   const dispatch = useDispatch();
@@ -10,8 +11,12 @@ const AlbumCard = ({ singleSong }) => {
     console.log("handleClick funziona"); // Invia tutti i dettagli della canzone selezionata
   };
 
+  const likedSong = useSelector((state) => state.songs.songs);
+
   const handleLikeClick = () => {
     dispatch(toggleLike(singleSong.id));
+    console.log("handleLikeClick funziona");
+    console.log(singleSong.id);
   };
 
   return (
@@ -28,7 +33,7 @@ const AlbumCard = ({ singleSong }) => {
         Artist: {singleSong.artist.name}
       </p>
       <button onClick={handleLikeClick}>
-        {singleSong.liked ? "Unlike" : "Like"}
+        {likedSong.id === singleSong.id ? "Unlike" : "Like"}
       </button>
     </div>
   );

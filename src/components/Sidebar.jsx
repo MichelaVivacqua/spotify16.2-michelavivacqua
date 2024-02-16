@@ -27,7 +27,7 @@ const Sidebar = () => {
                     href="#"
                     className="nav-item nav-link d-flex align-items-center"
                   >
-                    <i className="bi bi-house-door-fill"></i> Home
+                    <i className="bi bi-house-door-fill m-2"></i> Home
                   </Nav.Link>
                 </li>
                 <li>
@@ -35,7 +35,7 @@ const Sidebar = () => {
                     href="#"
                     className="nav-item nav-link d-flex align-items-center"
                   >
-                    <i className="bi bi-book-fill"></i> Your Library
+                    <i className="bi bi-book-fill m-2"></i> Your Library
                   </Nav.Link>
                 </li>
                 <li>
@@ -57,10 +57,10 @@ const Sidebar = () => {
           </Navbar.Collapse>
         </div>
         <div className="nav-btn">
-          <Button className="signup-btn" variant="primary" type="button">
+          <Button className="signup-btn" variant="light" type="button">
             Sign Up
           </Button>
-          <Button className="login-btn" variant="secondary" type="button">
+          <Button className="login-btn" variant="dark" type="button">
             Login
           </Button>
           <a href="#">Cookie Policy</a> |<a href="#"> Privacy</a>

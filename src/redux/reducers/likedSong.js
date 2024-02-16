@@ -7,9 +7,7 @@ const likedReducer = (state = initialState, action) => {
     case "TOGGLE_LIKE":
       return {
         ...state,
-        songs: state.songs.map((song) =>
-          song.id === action.payload ? { ...song, liked: !song.liked } : song
-        ),
+        songs: action.payload,
       };
     default:
       return state;
