@@ -1,5 +1,5 @@
 const initialState = {
-  selectedSong: null,
+  selectedSong: {},
 };
 
 const mainReducer = (state = initialState, action) => {

@@ -1,12 +1,12 @@
-/* eslint-disable react/prop-types */
-import { useDispatch } from "react-redux";
 import { selectSong } from "../redux/actions";
+import { useDispatch } from "react-redux";
 
 const AlbumCard = ({ singleSong }) => {
   const dispatch = useDispatch();
 
   const handleClick = () => {
-    dispatch(selectSong(singleSong)); // Invia tutti i dettagli della canzone selezionata
+    dispatch(selectSong(singleSong));
+    console.log("handleClick funziona"); // Invia tutti i dettagli della canzone selezionata
   };
 
   return (
